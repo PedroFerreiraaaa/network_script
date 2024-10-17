@@ -1,2 +1,3 @@
 #Network Script
-##Batch File (.bat)
+##Batch File
+###network.bat (script name)
