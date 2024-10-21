@@ -1,5 +1,0 @@
-REM ***************************************
-REM Programmer.: (C) 2024 Pedro Ferreira
-REM Date.......: 17/1072024
-REM Description: Network script.
-REM ***************************************
