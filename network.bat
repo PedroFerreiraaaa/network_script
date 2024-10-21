@@ -13,12 +13,14 @@ echo ############################
 echo 1 - IP Configuration
 echo 2 - IP Renew
 echo 3 - DNS Query
-echo 4 - Exit
+echo 4 - Show MAC Address
+echo 5 - Exit
 set /p opt="Select an option then press ENTER: "
 if %opt% == 1 goto IP_CONFIGURATIONS
 if %opt% == 2 goto Renew_IP_CONFIGURATIONS
 if %opt% == 3 goto DNS_Query
-if %opt% == 4 goto EXIT_SCREEN
+if %opt% == 4 goto Show_MAC_Address
+if %opt% == 5 goto EXIT_SCREEN
 
 goto MENU
 
@@ -38,6 +40,11 @@ goto MENU
 set /p domain="Insert domain: "
 set /p dnsserver="Insert dnsserver: "
 nslookup %domain% %dnsserver%
+pause
+goto MENU
+
+:Show_MAC_Address
+getmac
 pause
 goto MENU
 
