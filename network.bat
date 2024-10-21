@@ -12,11 +12,13 @@ echo # (C) 2024 . Pedro Ferreira#
 echo ############################
 echo 1 - IP Configuration
 echo 2 - IP Renew
-echo 3 - Exit
+echo 3 - DNS Query
+echo 4 - Exit
 set /p opt="Select an option then press ENTER: "
 if %opt% == 1 goto IP_CONFIGURATIONS
 if %opt% == 2 goto Renew_IP_CONFIGURATIONS
-if %opt% == 3 goto EXIT_SCREEN
+if %opt% == 3 goto DNS_Query
+if %opt% == 4 goto EXIT_SCREEN
 
 goto MENU
 
@@ -29,6 +31,13 @@ goto MENU
 ipconfig /release
 pause
 ipconfig /renew
+pause
+goto MENU
+
+:DNS_Query
+set /p domain="Insert domain: "
+set /p dnsserver="Insert dnsserver: "
+nslookup %domain% %dnsserver%
 pause
 goto MENU
 
